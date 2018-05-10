@@ -5,9 +5,12 @@ Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
-Plug 'roxma/nvim-completion-manager'
-Plug 'roxma/ncm-rct-complete'
 Plug 'jiangmiao/auto-pairs'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'roxma/nvim-completion-manager'
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
