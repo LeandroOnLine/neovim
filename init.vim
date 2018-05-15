@@ -65,6 +65,7 @@ set expandtab           " Insert spaces when TAB is pressed.
 set ignorecase          " Make searching case insensitive
 set smartcase           " ... unless the query has capital letters.
 set autoindent
+set omnifunc=htmlcomplete#CompleteTags
 
 " Tell Vim which characters to show for expanded TABs,
 " trailing whitespace, and end-of-lines.
