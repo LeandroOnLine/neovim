@@ -6,15 +6,18 @@ Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-rails'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'roxma/nvim-completion-manager'
-Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'joshdick/onedark.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'jreybert/vimagit'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 call plug#end()
 
 " One dark theme
@@ -36,11 +39,17 @@ let mapleader="\<space>"
 nnoremap <leader>; A;<esc>
 nnoremap <leader>ev :vsplit ~./config/nvim/init.vim<cr>
 nnoremap <leader>sv :source ~./config/nvim/init.vim<cr>
+" Open files in fuze search
 nnoremap <c-p> :Files<cr>
+" Find in all files
 nnoremap <c-f> :Ag<space>
+" Find / Replace
 nnoremap <c-h> :%s//<Left><Left>
+" Show git view
+nnoremap <c-g> :GV<cr>  
 
 map <F2> :NERDTreeToggle<cr>
+map <F4> :TagbarToggle<cr>
 
 set hidden
 set number              " Show the line numbers on the left side.
@@ -55,6 +64,7 @@ set showmatch           " Show matching brackets.
 set expandtab           " Insert spaces when TAB is pressed.
 set ignorecase          " Make searching case insensitive
 set smartcase           " ... unless the query has capital letters.
+set autoindent
 
 " Tell Vim which characters to show for expanded TABs,
 " trailing whitespace, and end-of-lines.
