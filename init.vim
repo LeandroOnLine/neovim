@@ -35,22 +35,27 @@ colorscheme onedark
 
 let mapleader="\<space>"
 
-" key maping
-nnoremap <leader>; A;<esc>
-nnoremap <leader>ev :vsplit ~./config/nvim/init.vim<cr>
-nnoremap <leader>sv :source ~./config/nvim/init.vim<cr>
+" ********* key maping **********
 " Open files in fuze search
 nnoremap <c-p> :Files<cr>
 " Find in all files
 nnoremap <c-f> :Ag<space>
-" Find / Replace
-nnoremap <c-h> :%s//<Left><Left>
+" Find / Replace all
+nnoremap <c-h> :%s///gc<Left><Left><Left><Left>
+" Find / Replace chose each
+nnoremap <s-h> :%s///g<Left><Left><Left>
 " Show git view
 nnoremap <c-g> :GV<cr>  
+
+nnoremap <c-Left>  :tabprevious<cr>
+nnoremap <c-Right> :tabnext<cr>
+nnoremap <c-t> :tabnew<CR>
+nnoremap <s-t> <Esc>:tabclose<CR>
 
 map <F2> :NERDTreeToggle<cr>
 map <F4> :TagbarToggle<cr>
 
+" ********* set options **********
 set hidden
 set number              " Show the line numbers on the left side.
 set relativenumber
