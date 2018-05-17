@@ -20,6 +20,7 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'ervandew/supertab'
+Plug 'Valloric/MatchTagAlways'
 call plug#end()
 
 " ********** themes **********
