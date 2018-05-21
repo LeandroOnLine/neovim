@@ -20,6 +20,7 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'ervandew/supertab'
+Plug 'MattesGroeger/vim-bookmarks'
 call plug#end()
 
 " ********** themes **********
@@ -36,11 +37,13 @@ endif
 syntax on
 colorscheme onedark
 
-" ********** Deoplete auto complete engine **********
-" Options
+" Global variables
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
 
+" ********** Deoplete auto complete engine **********
 " Disable the candidates in Comment/String syntaxes.
 call deoplete#custom#source('_',
             \ 'disabled_syntaxes', ['Comment', 'String'])
@@ -79,6 +82,8 @@ set inccommand=split
 set updatetime=100
 set shiftwidth=2
 set backspace=2
+set softtabstop=2
+set cursorcolumn        " Highlight current column
 set cursorline          " Highligh line at the cursor
 set showmatch           " Show matching brackets.
 set expandtab           " Insert spaces when TAB is pressed.
