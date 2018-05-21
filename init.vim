@@ -21,6 +21,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'ervandew/supertab'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'Valloric/MatchTagAlways'
 call plug#end()
 
 " ********** themes **********
