@@ -92,6 +92,7 @@ set ignorecase          " Make searching case insensitive
 set smartcase           " ... unless the query has capital letters.
 set autoindent
 set omnifunc=htmlcomplete#CompleteTags
+set clipboard+=unnamedplus
 
 " Tell Vim which characters to show for expanded TABs, trailing whitespace, and end-of-lines.
 if &listchars ==# 'eol:$'
