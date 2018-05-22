@@ -1,3 +1,4 @@
+
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } 
 " Plug 'uplus/deoplete-solargraph'
@@ -22,6 +23,8 @@ Plug 'junegunn/gv.vim'
 Plug 'ervandew/supertab'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Valloric/MatchTagAlways'
+Plug 'janko-m/vim-test'
+Plug 'tpope/vim-dispatch'
 call plug#end()
 
 " ********** themes **********
@@ -43,8 +46,10 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_smart_case = 1
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
+let test#strategy = "dispatch"
+let test#ruby#rspec#executable = 'bundle exec spring rspec'
 
-" ********** Deoplete auto complete engine **********
+" ********** Deoplete **********
 " Disable the candidates in Comment/String syntaxes.
 call deoplete#custom#source('_',
             \ 'disabled_syntaxes', ['Comment', 'String'])
@@ -73,6 +78,13 @@ map <F2> :NERDTreeToggle<cr>
 map <F3> :TagbarToggle<cr>
 " Show git view
 map <F5> :GV<cr>  
+
+" TDD shortcuts
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 " ********* set options **********
 set hidden
