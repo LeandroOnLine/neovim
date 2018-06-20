@@ -51,6 +51,7 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let test#strategy = "dispatch"
 let test#ruby#rspec#executable = 'bundle exec spring rspec'
+let b:ale_linters = {'javascript': ['eslint']}
 
 " ********** Deoplete **********
 " Disable the candidates in Comment/String syntaxes.
@@ -120,6 +121,9 @@ if &listchars ==# 'eol:$'
   set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 endif
 set list " Show problematic characters.
+
+" Automatically removing all trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
 
 " Command to generate ctags in ruby (in project folder)
 " ctags -R --languages=ruby --fields=* --exclude=.git --exclude=log . $(bundle list --paths)
