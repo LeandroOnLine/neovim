@@ -1,6 +1,6 @@
 
 call plug#begin()
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'uplus/deoplete-solargraph'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'sheerun/vim-polyglot'
@@ -81,13 +81,13 @@ nnoremap <c-Left>  :tabprevious<cr>
 nnoremap <c-Right> :tabnext<cr>
 nnoremap <c-t> :tabnew<CR>
 nnoremap <s-t> <Esc>:tabclose<CR>
-
+nnoremap <c-[> :pop<CR>
 " Show/hide nerdtree
 map <F2> :NERDTreeToggle<cr>
 " show/hide method navigation bar
 map <F3> :TagbarToggle<cr>
 " Show git view
-map <F5> :GV<cr>  
+map <F5> :GV<cr>
 
 " TDD shortcuts
 nmap <silent> <leader>t :TestNearest<CR>
