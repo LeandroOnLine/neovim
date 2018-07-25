@@ -12,7 +12,8 @@ Plug 'tpope/vim-rails'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
@@ -28,6 +29,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'scrooloose/nerdcommenter'
 Plug 'szw/vim-tags'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " ********** themes **********
@@ -42,7 +44,11 @@ if (empty($TMUX))
 endif
 
 syntax on
-colorscheme onedark
+" colorscheme onedark
+
+" Gruvbox theme
+colorscheme gruvbox
+set background=dark
 
 " Global variables
 let g:deoplete#enable_at_startup = 1
@@ -52,13 +58,15 @@ let g:indent_guides_guide_size=1
 let test#strategy = "dispatch"
 let test#ruby#rspec#executable = 'bundle exec spring rspec'
 let b:ale_linters = {'javascript': ['eslint']}
+let g:indentLine_char = '¦'
+let g:indentLine_color_term = 239
 
 " ********** Deoplete **********
 " Disable the candidates in Comment/String syntaxes.
-call deoplete#custom#source('_',
-            \ 'disabled_syntaxes', ['Comment', 'String'])
+" call deoplete#custom#source('_',
+            " \ 'disabled_syntaxes', ['Comment', 'String'])
 
-autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+" autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " ********** Nerd commenter **********
 " Add spaces after comment delimiters by default
@@ -81,7 +89,7 @@ nnoremap <c-Left>  :tabprevious<cr>
 nnoremap <c-Right> :tabnext<cr>
 nnoremap <c-t> :tabnew<CR>
 nnoremap <s-t> <Esc>:tabclose<CR>
-nnoremap <c-[> :pop<CR>
+
 " Show/hide nerdtree
 map <F2> :NERDTreeToggle<cr>
 " show/hide method navigation bar
